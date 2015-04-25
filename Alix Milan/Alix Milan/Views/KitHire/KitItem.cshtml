@@ -1,0 +1,34 @@
+﻿@model Alix_Milan.ViewModels.KitItemModel
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/Front.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ImageBytes) + "\" />")
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            £@Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "")
+</p>

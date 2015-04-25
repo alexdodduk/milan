@@ -1,0 +1,20 @@
+﻿@model Alix_Milan.Models.TermsAndConditions
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Back.cshtml";
+}
+
+<h2>Delete Terms and Conditions</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+
+@Html.Raw(Model.Body)

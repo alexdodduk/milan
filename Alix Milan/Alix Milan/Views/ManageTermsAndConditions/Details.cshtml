@@ -1,0 +1,15 @@
+﻿@model Alix_Milan.Models.TermsAndConditions
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Back.cshtml";
+}
+
+<h2>Terms and Conditions</h2>
+
+@Html.Raw(Model.Body)
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

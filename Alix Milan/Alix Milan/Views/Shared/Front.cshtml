@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Styles.css")" rel="stylesheet" type="text/css" />
+    <meta name="description" content="Alex Milan's work portfolio.'" />
+</head>
+<body>
+    <div id="container">
+        <div id="nav-background" class="slide">
+        </div>
+        <nav class="slide">
+            @*@Html.ActionLink("Home", "", "Home")*@
+            @*@Html.ActionLink("Dashboard", "", "Dashboard")*@
+            @Html.ActionLink("Projects", "", "Projects")
+            @Html.ActionLink("Kit Hire", "", "KitHire")
+            @Html.ActionLink("Ts&Cs", "", "TermsAndConditions")
+            @Html.ActionLink("About", "", "About")
+        </nav>
+        <button type="button" id="nav" class="slide">
+            <svg width="60px" height="100px" viewBox="0 0 3 5" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <desc>Menu button</desc>
+                <polygon points="0.5,0.5 2.5,0.5 0.5,4.5 0.5,0.5" />
+            </svg>
+        </button>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <div id="overlay"></div>
+    </div>
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/app")
+</body>
+</html>

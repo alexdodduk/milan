@@ -1,0 +1,29 @@
+﻿@model Alix_Milan.Models.Project
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/Front.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<section class="project">
+    <dl class="dl-horizontal">
+
+        @if (Model.VideoUrl != null)
+        {
+            @Html.Raw(Model.VideoUrl)
+        }
+        else
+        {
+            <section class="image">
+                @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ImageBytes) + "\" />")
+            </section>
+        }
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</section>
+

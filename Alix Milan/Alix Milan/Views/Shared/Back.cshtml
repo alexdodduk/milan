@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Styles.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/Scripts/ckeditor/adapters/jquery.js"></script>
+    <meta name="description" content="Dashboard" />
+</head>
+<body>
+    <nav>
+        @*@Html.ActionLink("Home", "", "Home")*@
+        <a href="@Url.Action("", "Dashboard")" id="dashboard"><h3>Dashboard</h3></a>
+        <div class="hover">
+            <h3>
+                Site
+            </h3>
+            <div>
+                @Html.ActionLink("About", "", "About")
+                @Html.ActionLink("Projects", "", "Projects")
+                @Html.ActionLink("Kit Hire", "", "KitHire")
+                @Html.ActionLink("Terms and Conditions", "", "TermsAndConditions")
+            </div>
+        </div>
+        <div class="hover">
+            <h3>
+                About
+            </h3>
+            <div>
+                @Html.ActionLink("Manage About", "", "ManageAbout")
+            </div>
+        </div>
+        <div class="hover">
+            <h3>
+                Projects
+            </h3>
+            <div>
+                @Html.ActionLink("Manage projects", "", "ManageProjects")
+            </div>
+        </div>
+        <div class="hover">
+            <h3>
+                Categories
+            </h3>
+            <div>
+                @Html.ActionLink("Manage Categories", "", "ManageCategories")
+                @Html.ActionLink("Manage Sub-categories", "", "ManageSubCategories")
+            </div>
+        </div>
+        <div class="hover">
+            <h3>
+                Kits
+            </h3>
+            <div>
+                @Html.ActionLink("Manage Kits", "", "ManageKits")
+                @Html.ActionLink("Manage Kit Items", "", "ManageKitItems")
+            </div>
+        </div>
+        <div class="hover">
+            <h3>
+                Terms and Conditions
+            </h3>
+            <div>
+                @Html.ActionLink("Manage Terms and Conditions", "", "ManageTermsAndConditions")
+            </div>
+        </div>
+        <a href="@Url.Action("logout", "auth")" id="log-out"><h3>Log Out</h3></a>
+    </nav>
+    <section id="main">
+        @RenderBody()
+    </section>
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")
+    @System.Web.Optimization.Scripts.Render("~/bundles/app")
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@model Alix_Milan.Models.TermsAndConditions
+
+@{
+    ViewBag.Title = "Terms and Conditions";
+    Layout = "~/Views/Shared/Front.cshtml";
+}
+
+@if (Model != null)
+{
+
+    <h1>Terms and Conditions</h1>
+    <section class="terms">
+        @Html.Raw(Model.Body)
+    </section>
+}

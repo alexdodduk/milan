@@ -1,0 +1,16 @@
+﻿@model Alix_Milan.Models.LogInModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<h1>Log in</h1>
+
+@Html.ValidationSummary(true)
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <p>
+        <button type="submit">Log In</button>
+    </p>
+}

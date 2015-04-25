@@ -1,0 +1,64 @@
+﻿@model Alix_Milan.Models.KitItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Back.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ImageBytes) + "\" />")
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            £@Html.DisplayFor(model => model.Price)
+        </dd>
+
+        @if (Model.KitId.HasValue)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Kit)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kit.Name)
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        @if (Model.SubCategoryId.HasValue)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.SubCategory)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SubCategory.Name)
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

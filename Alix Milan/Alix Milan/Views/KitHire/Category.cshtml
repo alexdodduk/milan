@@ -1,0 +1,29 @@
+﻿@model Alix_Milan.ViewModels.KitHireCategoryModel
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/Front.cshtml";
+}
+
+<h1>@Model.Name</h1>
+
+<div class="image">
+    @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(Model.ImageBytes) + "\" />")
+</div>
+
+@if (Model.SubcategoryKitItems.SelectMany(sc => sc.Value).Any() || Model.MiscKitItems.Any())
+{
+    @Html.Partial("SubcategoryItems", Model)
+
+    @Html.Partial("MiscKitItems", Model)
+}
+else
+{
+    <p>
+        No items to display
+    </p>
+}
+
+<p>
+    @Html.ActionLink("Back to list", "")
+</p>

@@ -1,0 +1,14 @@
+﻿@model Alix_Milan.ViewModels.EnterSubCategory
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Back.cshtml";
+}
+
+<h2>Manage Sub-categories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@Html.Partial("CategorySubcategories", Model)

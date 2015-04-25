@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+<video autoplay loop poster="~/Content/polina.jpg" id="bgvid">
+    <source src="~/Content/polina.webm" type="video/webm" />
+    <source src="~/Content/polina.mp4" type="video/mp4" />
+</video>
+<h1>Alix Milan</h1>
+<nav>
+    @Html.ActionLink("About", "", "About")
+    @Html.ActionLink("Projects", "", "Projects")
+    @Html.ActionLink("Kit Hire", "", "KitHire")
+</nav>
+<div id="div1"></div>
+
+<!--[if lt IE 9]>
+<script>
+  var video = document.createElement('video');
+  var currentDiv = document.getElementById("div1"); 
+  document.body.insertBefore(video, currentDiv); 
+</script>
+<![endif]-->

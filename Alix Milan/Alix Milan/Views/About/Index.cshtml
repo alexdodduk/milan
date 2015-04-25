@@ -1,0 +1,17 @@
+﻿@model Alix_Milan.Models.About
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/Front.cshtml";
+}
+
+<h1>About</h1>
+
+@if (Model != null)
+{
+    <section class="about">
+        <p>@Html.Raw(@Model.Body)</p>
+        <p><a href="mailto:@Model.Email">@Model.Email</a></p>
+        <p><a href="mailto:@Model.Telephone">@Model.Telephone</a></p>
+    </section>
+}

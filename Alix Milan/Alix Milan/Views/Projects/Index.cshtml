@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Alix_Milan.Models.Project>
+
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/Front.cshtml";
+}
+
+<h1>Alix Milan</h1>
+
+@foreach (var item in Model)
+{
+    <a href='@Url.Action("Details", "Projects", new { id = item.ID })' class="project">
+        <div class="overlay">
+            <h3>
+                @item.Name
+            </h3>
+            @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(item.ImageBytes) + "\" />")
+        </div>
+    </a>
+}
