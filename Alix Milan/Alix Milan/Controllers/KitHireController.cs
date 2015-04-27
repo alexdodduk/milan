@@ -55,12 +55,12 @@ namespace Alix_Milan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
+            var categoryId = category.ID;
             var categoryModel = new KitHireCategoryModel
             {
                 Name = category.Name,
-                SubcategoryKitItems = GetSubcategoryKitItems(),
-                MiscKitItems = GetMiscKitItems(),
+                SubcategoryKitItems = GetSubcategoryKitItems(categoryId),
+                MiscKitItems = GetMiscKitItems(categoryId),
                 ImageBytes = category.ImageBytes
             };
 
@@ -87,11 +87,11 @@ namespace Alix_Milan.Controllers
             return View(kitItemModel);
         }
 
-        private Dictionary<SubCategory, IEnumerable<KitItem>> GetSubcategoryKitItems()
+        private Dictionary<SubCategory, IEnumerable<KitItem>> GetSubcategoryKitItems(int categoryId)
         {
             var subcategoryKitItemsDictionary = new Dictionary<SubCategory, IEnumerable<KitItem>>();
 
-            foreach (var subcategory in db.SubCategories.OrderBy(c => c.Order).ToList())
+            foreach (var subcategory in db.SubCategories.Where(sc => sc.CategoryId == categoryId).OrderBy(c => c.Order).ToList())
             {
                 subcategoryKitItemsDictionary.Add(subcategory, db.KitItems.Where(ki => ki.SubCategoryId == subcategory.ID));
             }
@@ -99,9 +99,9 @@ namespace Alix_Milan.Controllers
             return subcategoryKitItemsDictionary;
         }
 
-        private IEnumerable<KitItem> GetMiscKitItems()
+        private IEnumerable<KitItem> GetMiscKitItems(int categoryId)
         {
-            return db.KitItems.Where(ki => ki.SubCategoryId.HasValue == false);
+            return db.KitItems.Where(ki => ki.CategoryId == categoryId).Where(ki => ki.SubCategoryId.HasValue == false);
         }
     }
 }

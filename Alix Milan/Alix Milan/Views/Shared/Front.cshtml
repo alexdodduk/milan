@@ -13,10 +13,27 @@
         <nav class="slide">
             @*@Html.ActionLink("Home", "", "Home")*@
             @*@Html.ActionLink("Dashboard", "", "Dashboard")*@
-            @Html.ActionLink("Projects", "", "Projects")
-            @Html.ActionLink("Kit Hire", "", "KitHire")
-            @Html.ActionLink("Ts&Cs", "", "TermsAndConditions")
-            @Html.ActionLink("About", "", "About")
+            @Html.ActionLink("Projects", "", "Projects", null, new { @tabindex="-1" })
+            @Html.ActionLink("Kit Hire", "", "KitHire", null, new { @tabindex="-1" })
+            @Html.ActionLink("Ts&Cs", "", "TermsAndConditions", null, new { @tabindex="-1" })
+            @Html.ActionLink("About", "", "About", null, new { @tabindex="-1" })
+            
+            @if (ViewBag.FacebookUrl != null)
+            {
+                <a href="@ViewBag.FacebookUrl" id="facebook" tabindex="-1">
+                    <svg viewBox="159.167 48.5 192.667 414" xml:space="preserve">
+                        <path d="M204.067,184.692h-43.144v70.426h43.144V462h82.965V254.238h57.883l6.162-69.546h-64.045 c0,0,0-25.97,0-39.615c0-16.397,3.303-22.89,19.147-22.89c12.766,0,44.896,0,44.896,0V50c0,0-47.325,0-57.44,0 c-61.734,0-89.567,27.18-89.567,79.231C204.067,174.566,204.067,184.692,204.067,184.692z"></path>
+                </svg>
+                </a>
+            }
+            @if (ViewBag.TwitterUrl != null)
+            {
+                <a href="@ViewBag.TwitterUrl" id="twitter" tabindex="-1">
+                    <svg viewBox="159.167 48.5 192.667 414" xml:space="preserve">
+                        <path id="twitter-icon" d="M462,128.223c-15.158,6.724-31.449,11.269-48.547,13.31c17.448-10.461,30.854-27.025,37.163-46.764 c-16.333,9.687-34.422,16.721-53.676,20.511c-15.418-16.428-37.386-26.691-61.697-26.691c-54.561,0-94.668,50.916-82.338,103.787 c-70.25-3.523-132.533-37.177-174.223-88.313c-22.142,37.982-11.485,87.69,26.158,112.85c-13.854-0.438-26.891-4.241-38.285-10.574 c-0.917,39.162,27.146,75.781,67.795,83.949c-11.896,3.237-24.926,3.979-38.17,1.447c10.754,33.58,41.972,58.019,78.96,58.699 C139.604,378.282,94.846,390.721,50,385.436c37.405,23.982,81.837,37.977,129.57,37.977c156.933,0,245.596-132.551,240.251-251.435 C436.339,160.061,450.668,145.174,462,128.223z"></path>
+                </svg>
+                </a>
+            }
         </nav>
         <button type="button" id="nav" class="slide">
             <svg width="60px" height="100px" viewBox="0 0 3 5" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -27,6 +44,9 @@
         <section id="main">
             @RenderBody()
         </section>
+        <footer>
+            &copy; @DateTime.Now.Year Alix Milan
+        </footer>
         <div id="overlay"></div>
     </div>
     @System.Web.Optimization.Scripts.Render("~/bundles/jquery")

@@ -56,6 +56,13 @@ function bindMenuButton() {
 
         $container.removeClass("nav-bump");
         $container.toggleClass("nav-open");
+
+        if ($container.hasClass("nav-open")) {
+            menuFocus();
+        }
+        else {
+            menuBlur();
+        }
     });
 
     $('button#nav').hover(function (e) {
@@ -68,14 +75,51 @@ function bindMenuButton() {
         $container.addClass("nav-bump");
     });
 
+    $('button#nav').focus(function (e) {
+        var $container = $('#container');
+
+        if ($container.hasClass("nav-open")) {
+            return;
+        }
+
+        $container.addClass("nav-bump");
+    });
+
+    $('button#nav').blur(function (e) {
+        var $container = $('#container');
+        $container.removeClass("nav-bump");
+    });
+
     $('#overlay').hover(function (e) {
         var $container = $('#container');
         $container.removeClass("nav-bump");
     });
 }
 
+function menuFocus() {
+    $('#main *').each(function () {
+        $(this).attr("tabindex", "-1");
+    });
+
+    $('nav *').each(function () {
+        $(this).removeAttr("tabindex");
+    });
+}
+
+function menuBlur() {
+    $('#main *').each(function () {
+        $(this).removeAttr("tabindex");
+    });
+
+    $('nav *').each(function () {
+        $(this).attr("tabindex", "-1");
+    });
+}
+
 function showMenuButton() {
-    $('#nav').css("left", "20px");
+    setTimeout(function () {
+        $('#nav').css("left", "20px");
+    }, 500);
 }
 
 function resizeYouTubeVideos() {

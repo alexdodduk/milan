@@ -25,5 +25,7 @@ namespace Alix_Milan
         public System.Data.Entity.DbSet<Alix_Milan.Models.KitItem> KitItems { get; set; }
 
         public System.Data.Entity.DbSet<Alix_Milan.Models.TermsAndConditions> TermsAndConditionses { get; set; }
+
+        public System.Data.Entity.DbSet<Alix_Milan.Models.SocialMediaSettings> SocialMediaSettingses { get; set; }
     }
 }

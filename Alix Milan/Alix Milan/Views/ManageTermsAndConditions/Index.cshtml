@@ -7,9 +7,12 @@
 
 <h2>Manage Terms and Conditions</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (Model.Any() == false)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>

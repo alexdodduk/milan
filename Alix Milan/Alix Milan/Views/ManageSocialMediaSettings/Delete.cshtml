@@ -1,0 +1,38 @@
+﻿@model Alix_Milan.Models.SocialMediaSettings
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Back.cshtml";
+}
+
+<h2>Delete Social Media Settings</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwitterUrl)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -10,18 +10,18 @@
     <meta name="description" content="Dashboard" />
 </head>
 <body>
-    <nav>
+    <nav class="inverted">
         @*@Html.ActionLink("Home", "", "Home")*@
         <a href="@Url.Action("", "Dashboard")" id="dashboard"><h3>Dashboard</h3></a>
         <div class="hover">
             <h3>
-                Site
+                @Html.ActionLink("Site", "", "")
             </h3>
             <div>
-                @Html.ActionLink("About", "", "About")
                 @Html.ActionLink("Projects", "", "Projects")
                 @Html.ActionLink("Kit Hire", "", "KitHire")
-                @Html.ActionLink("Terms and Conditions", "", "TermsAndConditions")
+                @Html.ActionLink("About", "", "About")
+                @Html.ActionLink("Ts&Cs", "", "TermsAndConditions")
             </div>
         </div>
         <div class="hover">
@@ -66,6 +66,7 @@
                 @Html.ActionLink("Manage Terms and Conditions", "", "ManageTermsAndConditions")
             </div>
         </div>
+        <a href="@Url.Action("", "ManageSocialMediaSettings")" id="social"><h3>Manage Social Settings</h3></a>
         <a href="@Url.Action("logout", "auth")" id="log-out"><h3>Log Out</h3></a>
     </nav>
     <section id="main">

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Alix_Milan.Models.SocialMediaSettings>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Back.cshtml";
+}
+
+<h2>Manage Social Settings</h2>
+
+@if (Model.Any() == false)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FacebookUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwitterUrl)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FacebookUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TwitterUrl)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
