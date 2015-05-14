@@ -132,7 +132,8 @@ body nav a:visited {
 }
 body nav a#log-out,
 body nav a#dashboard,
-body nav a#social {
+body nav a#social,
+body nav a#cv {
   display: inline-block;
   vertical-align: top;
 }
@@ -141,8 +142,8 @@ body nav h3 {
 }
 body nav #facebook,
 body nav #twitter {
-  display: inline-block;
   line-height: 0;
+  margin-bottom: 0.2em;
 }
 body nav #facebook svg,
 body nav #twitter svg {
@@ -387,7 +388,7 @@ body #container.nav-bump #nav-background {
 body #container button#nav {
   z-index: 1993;
   position: fixed;
-  top: 20px;
+  top: 15px;
   left: -60px;
   cursor: pointer;
   border: none;
