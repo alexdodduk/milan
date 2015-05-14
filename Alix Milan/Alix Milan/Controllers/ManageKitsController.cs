@@ -95,7 +95,9 @@ namespace Alix_Milan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Kit kit = db.Kits.Find(id);
+
             if (kit == null)
             {
                 return HttpNotFound();
@@ -124,7 +126,7 @@ namespace Alix_Milan.Controllers
         {
             var kit = db.Kits.Find(kitViewModel.ID);
 
-            if (ModelState.IsValid == false)
+            if (ModelState.IsValid == false || kit == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
             }
