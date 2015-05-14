@@ -526,10 +526,12 @@
     <Compile Include="AppViewPage.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CVController.cs" />
     <Compile Include="Controllers\KitHireController.cs" />
     <Compile Include="Controllers\KitItemsController.cs" />
     <Compile Include="Controllers\ManageAboutsController.cs" />
     <Compile Include="Controllers\ManageCategoriesController.cs" />
+    <Compile Include="Controllers\ManageCVController.cs" />
     <Compile Include="Controllers\ManageKitItemsController.cs" />
     <Compile Include="Controllers\ManageKitsController.cs" />
     <Compile Include="Controllers\ManageProjectsController.cs" />
@@ -714,6 +716,8 @@
     <Compile Include="Migrations\201504131304395_AddSocialMediaSettings.Designer.cs">
       <DependentUpon>201504131304395_AddSocialMediaSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505141948007_AddedCV\.cs" />
+    <Compile Include="Migrations\201505141948007_AddedCV\.Designer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="AppUserPrincipal.cs" />
     <Compile Include="AppUser.cs" />
@@ -728,6 +732,7 @@
     </Compile>
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CV.cs" />
     <Compile Include="Models\Kit.cs" />
     <Compile Include="Models\KitItem.cs" />
     <Compile Include="Models\Project.cs" />
@@ -735,6 +740,7 @@
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\TermsAndConditions.cs" />
     <Compile Include="ViewModels\EnterCategory.cs" />
+    <Compile Include="ViewModels\EnterCV.cs" />
     <Compile Include="ViewModels\EnterKit.cs" />
     <Compile Include="ViewModels\EnterKitItem.cs" />
     <Compile Include="ViewModels\EnterProject.cs" />
@@ -810,6 +816,10 @@
     <Content Include="Views\ManageSocialMediaSettings\Details.cshtml" />
     <Content Include="Views\ManageSocialMediaSettings\Edit.cshtml" />
     <Content Include="Views\ManageSocialMediaSettings\Index.cshtml" />
+    <Content Include="Views\ManageCV\Create.cshtml" />
+    <Content Include="Views\ManageCV\Delete.cshtml" />
+    <Content Include="Views\ManageCV\Edit.cshtml" />
+    <Content Include="Views\ManageCV\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -819,6 +829,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\App\" />
+    <Folder Include="Views\CV\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
@@ -953,6 +964,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504131304395_AddSocialMediaSettings.resx">
       <DependentUpon>201504131304395_AddSocialMediaSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505141948007_AddedCV\.resx">
+      <DependentUpon>.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

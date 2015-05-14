@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Alix_Milan.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -12,20 +14,22 @@ namespace Alix_Milan
             : base("DefaultConnection")
         {
         }
-        public System.Data.Entity.DbSet<Alix_Milan.Models.About> Abouts { get; set; }
+        public DbSet<About> Abouts { get; set; }
 
-        public System.Data.Entity.DbSet<Alix_Milan.Models.Project> Projects { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
-        public System.Data.Entity.DbSet<Alix_Milan.Models.Category> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
-        public System.Data.Entity.DbSet<Alix_Milan.Models.SubCategory> SubCategories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
 
-        public System.Data.Entity.DbSet<Alix_Milan.Models.Kit> Kits { get; set; }
+        public DbSet<Kit> Kits { get; set; }
 
-        public System.Data.Entity.DbSet<Alix_Milan.Models.KitItem> KitItems { get; set; }
+        public DbSet<KitItem> KitItems { get; set; }
 
-        public System.Data.Entity.DbSet<Alix_Milan.Models.TermsAndConditions> TermsAndConditionses { get; set; }
+        public DbSet<TermsAndConditions> TermsAndConditionses { get; set; }
 
-        public System.Data.Entity.DbSet<Alix_Milan.Models.SocialMediaSettings> SocialMediaSettingses { get; set; }
+        public DbSet<SocialMediaSettings> SocialMediaSettingses { get; set; }
+
+        public DbSet<CV> CVs { get; set; }
     }
 }
