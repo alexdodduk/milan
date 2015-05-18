@@ -12,6 +12,7 @@ namespace Alix_Milan.Controllers
         private AppDbContext db = new AppDbContext();
 
         // GET: CV
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var cv = db.CVs.SingleOrDefault();

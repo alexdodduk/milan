@@ -24,7 +24,7 @@ namespace Alix_Milan.Controllers
         }
 
         // GET: ManageCV/View
-        public ActionResult View()
+        public ActionResult Details()
         {
             var cv = db.CVs.SingleOrDefault();
 
