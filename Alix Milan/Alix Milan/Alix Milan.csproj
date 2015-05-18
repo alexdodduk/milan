@@ -829,7 +829,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\App\" />
-    <Folder Include="Views\CV\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
