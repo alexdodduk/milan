@@ -161,14 +161,14 @@ body {
 
         #facebook {
 
-                &:focus {
-                    svg {
-                        background: lighten(@FacebookBlue, 20%);
-                    }
+            &:focus {
+                svg {
+                    background: lighten(@FacebookBlue, 20%);
                 }
+            }
 
             svg {
-                background: @FacebookBlue;                
+                background: @FacebookBlue;
 
                 &:hover {
                     background: lighten(@FacebookBlue, 20%);
@@ -182,15 +182,15 @@ body {
 
         #twitter {
 
-                &:focus {
-                    svg {
-                        background: lighten(@TwitterBlue, 20%);
-                    }
+            &:focus {
+                svg {
+                    background: lighten(@TwitterBlue, 20%);
                 }
+            }
 
             svg {
                 background: @TwitterBlue;
-                
+
                 &:hover {
                     background: lighten(@TwitterBlue, 20%);
                 }
@@ -535,5 +535,44 @@ body {
     .validation-summary-errors, .text-danger {
         color: @Red;
         display: block;
+    }
+}
+
+@media only screen and (max-device-width: 568px) {
+    body {
+        h1 {
+            font-size: 3em;
+        }
+
+        #container {
+            &.nav-open {
+
+                .slide {
+                    -moz-transform: translate(330px);
+                    -ms-transform: translate(330px);
+                    -o-transform: translate(330px);
+                    -webkit-transform: translate(330px);
+                    transform: translate(330px);
+                    -moz-transition: transform .2s;
+                    -o-transition: transform .2s;
+                    -webkit-transition: transform .2s;
+                    transition: transform .2s;
+                }
+
+                #nav-background {
+                    -moz-transform: rotate(25deg) translate(220px);
+                    -ms-transform: rotate(25deg) translate(220px);
+                    -o-transform: rotate(25deg) translate(220px);
+                    -webkit-transform: rotate(25deg) translate(220px);
+                    transform: rotate(25deg) translate(220px);
+                }
+            }
+
+            nav {
+                a {
+                    font-size: 2em;
+                }
+            }
+        }
     }
 }
